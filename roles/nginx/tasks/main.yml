@@ -12,11 +12,16 @@
   copy:
     src: roles/nginx/files/nginx.conf
     dest: /etc/nginx/nginx.conf
-- name: Create vhosts.d directory
+- name: Creating multiple folders
   file:
-    path: /etc/nginx/vhosts.d
+    path: "{{item}}"
     state: directory
-- name: Copy config templates
+    mode: 0755
+    group: root
+    owner: root
+  with_items:
+  - ["/var/www/{{  ngx_server_name  }}/htdocs","/etc/nginx/vhosts.d","/var/www/{{  ngx_server_name  }}/logs"]
+- name: Copy config template
   template:
     src: roles/nginx/templates/vhost.j2
     dest: /etc/nginx/vhosts.d/{{ ngx_server_name }}.conf
