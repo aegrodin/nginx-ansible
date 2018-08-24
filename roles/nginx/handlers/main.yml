@@ -2,7 +2,3 @@
 - name: reload nginx config
   listen: reload nginx
   service: name=nginx state=reloaded
-
-- name: check that nginx is started
-  listen: reload nginx
-  service: name=nginx state=started enabled=yes
