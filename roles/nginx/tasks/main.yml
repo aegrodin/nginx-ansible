@@ -7,6 +7,10 @@
   copy:
     src: roles/nginx/files/nginx.conf
     dest: /etc/nginx/nginx.conf
+- name: Create vhosts.d directory
+  file:
+    path: /etc/nginx/vhosts.d
+    state: directory
 - name: Copy config templates
   template:
     src: roles/nginx/templates/vhost.j2
