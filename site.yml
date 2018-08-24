@@ -1,0 +1,6 @@
+---
+- name: Install nginx and do some pre-configuration
+  hosts: webservers
+
+  roles:
+    - nginx

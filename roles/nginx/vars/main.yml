@@ -1,0 +1,4 @@
+---
+# Main required variables are server_name and upstream to use with proxy_pass
+ngx_server_name: 'example.com'
+ngx_upstream: 'http://127.0.0.1:8080'

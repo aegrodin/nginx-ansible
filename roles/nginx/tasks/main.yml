@@ -1,0 +1,14 @@
+---
+- name: Install nginx from os repo
+      package:
+        name: nginx
+        state: present
+  - name: Copy standard nginx.conf
+    copy:
+      src: roles/nginx/files/nginx.conf
+      dest: /etc/nginx/nginx.conf
+  - name: Copy config templates
+    template:
+      src: roles/nginx/templates/vhost.j2
+      dest: /etc/nginx/vhosts.d/j{{ ngx_server_name }}.conf
+      notify: reload nginx
