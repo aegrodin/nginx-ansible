@@ -1,7 +1,10 @@
 ---
-- name: reload nginx
+- name: reload nginx config
+  listen: reload nginx
   service: name=nginx state=reloaded
-- name: run nginx
+
+- name: check that nginx is started
+  listen: reload nginx
   service: 
     name: nginx
     state: started

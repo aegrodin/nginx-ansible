@@ -17,4 +17,3 @@
     dest: /etc/nginx/vhosts.d/{{ ngx_server_name }}.conf
   notify:
   - reload nginx
-  - run nginx

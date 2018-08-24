@@ -2,8 +2,8 @@ server {
     listen 80;
     server_name {{  ngx_server_name  }} www.{{  ngx_server_name  }};
 
-    access_log /srv/www/{{  ngx_server_name  }}/logs/{{  ngx_server_name  }}-acc main;
-    error_log /srv/www/{{  ngx_server_name  }}/logs/{{  ngx_server_name  }}-err;
+    access_log /var/www/{{  ngx_server_name  }}/logs/{{  ngx_server_name  }}-acc main;
+    error_log /var/www/{{  ngx_server_name  }}/logs/{{  ngx_server_name  }}-err;
 
     client_max_body_size 256m;
 
@@ -25,6 +25,6 @@ server {
         expires 7d;
         access_log off;
         log_not_found off;
-        root /srv/www/{{  ngx_server_name  }}/htdocs;
+        root /var/www/{{  ngx_server_name  }}/htdocs;
     }
 }
