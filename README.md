@@ -1,2 +1,2 @@
 # nginx-ansible
-Installing nginx with ansible and configuring it somehow
+Install your nginx with ansible and configure it somehow
