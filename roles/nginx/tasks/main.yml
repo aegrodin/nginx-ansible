@@ -10,5 +10,6 @@
 - name: Copy config templates
   template:
     src: roles/nginx/templates/vhost.j2
-    dest: /etc/nginx/vhosts.d/j{{ ngx_server_name }}.conf
-    notify: reload nginx
+    dest: /etc/nginx/vhosts.d/{{ ngx_server_name }}.conf
+  notify:
+  - reload nginx
