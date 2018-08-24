@@ -5,7 +5,4 @@
 
 - name: check that nginx is started
   listen: reload nginx
-  service: 
-    name: nginx
-    state: started
-    enabled: yes
+  service: name=nginx state=started enabled=yes
